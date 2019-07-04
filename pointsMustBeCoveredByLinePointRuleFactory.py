@@ -20,10 +20,7 @@ class PointsMustBeCoveredByLinePointRuleFactory(AbstractTopologyRuleFactory):
             self,
             "pointsMustBeCoveredByLinePoint",
             "points Must Be Covered By Line Point",
-            "This rule requires that the points in on layer must be covered by lines in another layer.",
-			" Points errors are created on the points that are not covered by lines.",
-			" For example, this rule is useful when is needed model points that are coincident with lines",
-			" like as when there are falls along a set of lines, such as highway signs along highways.",
+            "This rule requires that the points in on layer must be covered by lines in another layer. Points errors are created on the points that are not covered by lines. For example, this rule is useful when is needed model points that are coincident with lines like as when there are falls along a set of lines, such as highway signs along highways.",
             ListBuilder().add(Geometry.TYPES.POINT).add(Geometry.TYPES.MULTIPOINT).asList(),
             ListBuilder().add(Geometry.TYPES.CURVE).add(Geometry.TYPES.MULTICURVE).asList()
         )
