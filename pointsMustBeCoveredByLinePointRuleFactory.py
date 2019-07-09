@@ -18,15 +18,15 @@ class PointsMustBeCoveredByLinePointRuleFactory(AbstractTopologyRuleFactory):
     def __init__(self):
         AbstractTopologyRuleFactory.__init__(
             self,
-            "pointsMustBeCoveredByLinePoint",
-            "points Must Be Covered By Line Point",
-            "This rule requires that the points in on layer must be covered by lines in another layer. Points errors are created on the points that are not covered by lines. For example, this rule is useful when is needed model points that are coincident with lines like as when there are falls along a set of lines, such as highway signs along highways.",
+            "PointsMustBeCoveredByLinePoint",
+            "Points Must Be Covered By Line Point Rule",
+            "This rule requires that the point in on layer must be covered by lines in another layer so points errors are created on the points that are not covered by lines.",
             ListBuilder().add(Geometry.TYPES.POINT).add(Geometry.TYPES.MULTIPOINT).asList(),
             ListBuilder().add(Geometry.TYPES.CURVE).add(Geometry.TYPES.MULTICURVE).asList()
         )
     
     def createRule(self, plan, dataSet1, dataSet2, tolerance):
-        rule = MustBeCoveredByEndpointOfPointRule(plan, self, tolerance, dataSet1, dataSet2)
+        rule = PointsMustBeCoveredByLinePointRule(plan, self, tolerance, dataSet1, dataSet2)
         return rule
 
 def selfRegister():
