@@ -41,7 +41,6 @@ class PointsMustBeCoveredByLinePointRule(AbstractTopologyRule):
                         feature2 = featureReference.getFeature()
                         line2 = feature2.getDefaultGeometry()
                         if line2.getGeometryType().getName() == "Line2D":
-                            #numVertices = line2.getNumVertices()
                             if buffer1.intersects( line2 ):
                                 contains = True
                                 break
@@ -50,7 +49,6 @@ class PointsMustBeCoveredByLinePointRule(AbstractTopologyRule):
                                 n2 = line2.getPrimitivesNumber()
                                 for i in range(0, n2 + 1):
                                     curve2 = line2.getCurveAt(i)
-                                    #numVertices = curve2.getNumVertices()
                                     if buffer1.intersects( curve2 ):
                                         contains = True
                                         break
@@ -75,7 +73,6 @@ class PointsMustBeCoveredByLinePointRule(AbstractTopologyRule):
                                 feature2 = featureReference.getFeature()
                                 line2 = feature2.getDefaultGeometry()
                                 if line2.getGeometryType().getName() == "Line2D":
-                                    #numVertices = line2.getNumVertices()
                                     if buffer1.intersects( line2 ):
                                         contains = True
                                         break
@@ -84,7 +81,6 @@ class PointsMustBeCoveredByLinePointRule(AbstractTopologyRule):
                                         n2 = line2.getPrimitivesNumber()
                                         for j in range(0, n2 + 1):
                                             curve2 = line2.getCurveAt(j)
-                                            #numVertices = curve2.getNumVertices()
                                             if buffer1.intersects( curve2 ):
                                                 contains = True
                                                 break
