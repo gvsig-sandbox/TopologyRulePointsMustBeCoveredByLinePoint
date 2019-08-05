@@ -29,18 +29,9 @@ class PointsMustBeCoveredByLinePointRule(AbstractTopologyRule):
             for featureReference in theDataSet2.query(buffer1):
                 feature2 = featureReference.getFeature()
                 line2 = feature2.getDefaultGeometry()
-                if line2.getGeometryType().getName() == "Line2D":
-                    if buffer1.intersects(line2):
-                        result = True
-                        break
-                else:
-                    if line2.getGeometryType().getName() == "MultiLine2D":
-                        n2 = line2.getPrimitivesNumber()
-                        for i in range(0, n2 + 1):
-                            curve2 = line2.getCurveAt(i)                            
-                            if buffer1.intersects(curve2):
-                                result = True
-                                break
+                if buffer1.intersects(line2):
+                    result = True
+                    break
         else:
             if self.expression == None:
                 manager = ExpressionEvaluatorLocator.getManager()
