@@ -10,7 +10,7 @@ class DeletePointAction(AbstractTopologyRuleAction):
     def __init__(self):
         AbstractTopologyRuleAction.__init__(
             self,
-			"PointsMustBeCoveredByLinePoint",
+	    "PointsMustBeCoveredByLinePoint",
             "DeletePointAction",
             "Delete Point Action",
             "This action deletes the point errors, these are the points that are not covered by the line."
