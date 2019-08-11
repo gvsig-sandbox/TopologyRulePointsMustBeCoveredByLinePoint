@@ -1,8 +1,8 @@
 {
     "id": "PointsMustBeCoveredByLinePoint",
-    "name": "points Must Be CoveredBy Line Point",
+    "name": "points Must Be Covered By Line Point",
     "description": [ 
-        "<img src=\"@@@_d/mustBeCoveredByEndpointOf.png\">\n",     
+        "<img src=\"@@@_d/pointsMustBeCoveredByLine.png\">\n",     
         "In this rule the points in one layer must be covered by the lines in another layer,",
 		" so points errors are created on the points that are not covered by lines. For example,",
 		" this rule is useful when is needed model points that are coincident with lines",
@@ -13,7 +13,7 @@
             "name" : "Delete Point",
             "description": [ 
             "This action delete the point errors. Points of the input layer that are not covered by the line must be deleted."
-			"Delete Point action, delete the entities that do not comply the rule"
+            "Delete Point action, delete the entities that do not comply the rule"
             ]
         }
     }
