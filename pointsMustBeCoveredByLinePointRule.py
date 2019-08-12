@@ -24,8 +24,8 @@ class PointsMustBeCoveredByLinePointRule(AbstractTopologyRule):
         self.addAction(DeletePointAction())
     
     def intersects(self, buffer1, theDataSet2):
+        result = False
         if theDataSet2.getSpatialIndex() != None:
-            result = False
             for featureReference in theDataSet2.query(buffer1):
                 feature2 = featureReference.getFeature()
                 line2 = feature2.getDefaultGeometry()
@@ -50,8 +50,6 @@ class PointsMustBeCoveredByLinePointRule(AbstractTopologyRule):
                 ).toString()
             )
             if theDataSet2.findFirst(self.expression) == None:
-                result = False
-            else:
                 result = True
         return result
     
