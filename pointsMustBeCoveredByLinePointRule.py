@@ -60,7 +60,7 @@ class PointsMustBeCoveredByLinePointRule(AbstractTopologyRule):
             theDataSet2 = self.getDataSet2()
             geometryType1 = point1.getGeometryType()
             if geometryType1.getSubType() == geom.D2 or geometryType1.getSubType() == geom.D2M:
-                if geometryType1.getType() == geom.POINT:
+                if geometryType1.getType() == geom.POINT or geometryType1.isTypeOf(geom.POINT):
                     buffer1 = point1.buffer(tolerance1)
                     if not self.intersects(buffer1, theDataSet2):
                         report.addLine(self,
@@ -77,7 +77,7 @@ class PointsMustBeCoveredByLinePointRule(AbstractTopologyRule):
                             ""
                         )
                 else:
-                    if geometryType1.getType() == geom.MULTIPOINT:
+                    if geometryType1.getType() == geom.MULTIPOINT or geometryType1.isTypeOf(geom.MULTIPOINT):
                         n1 = point1.getPrimitivesNumber()
                         for i in range(0, n1 + 1):
                             buffer1 = point1.getPointAt(i).buffer(tolerance1)
